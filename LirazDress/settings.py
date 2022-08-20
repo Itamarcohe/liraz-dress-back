@@ -86,13 +86,14 @@ WSGI_APPLICATION = 'LirazDress.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'liraz_db',
+        'NAME': 'liraz_dress',
         'USER': 'postgres',
         'PASSWORD': '1673495as',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation

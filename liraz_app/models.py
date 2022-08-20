@@ -8,6 +8,7 @@ class MetaModel(models.Model):
     class Meta:
         abstract = True
 
+
 class Dress(MetaModel):
     dress_name = models.CharField(max_length=512, null=False,blank=False)
     price = models.FloatField(null=False,blank=False)
@@ -16,21 +17,15 @@ class Dress(MetaModel):
     size=  models.CharField(max_length=128,null=True,blank=True)
     featured_image = models.URLField(max_length=512, default='https://cdn1.bambinifashion.com/img/p/6/4/9/4/0/8/649408--product-gallery.jpg')
 
-
-    class Meta:
-        db_table = 'Dresses'
-
     def __str__(self):
         return self.dress_name
+
 
 class Lead(MetaModel):
     full_name = models.CharField(max_length=512, null=False,blank=False)
     phone_number = models.CharField(max_length=15,null=False,blank=False)
     email = models.EmailField()
     description = models.CharField(max_length=2048,null=False,blank=False)
-
-    class Meta:
-        db_table = 'Leads'
 
     def __str__(self):
         return f"{self.full_name} Lead at {self.created_at}"
